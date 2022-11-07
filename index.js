@@ -1,9 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const data = require("./data.json");
 
-const app = expres();
+const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
@@ -14,6 +15,6 @@ app.all("*", (req, res) => {
   return res.statut(404).json({ message: "route not found" });
 });
 
-app.listen(4000, () => {
-  console.log("server operationnal !");
+app.listen(process.env.PORT, () => {
+  console.log("server operationnal Phil !");
 });
