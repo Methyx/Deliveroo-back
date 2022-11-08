@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.all("*", (req, res) => {
-  return res.statut(404).json({ message: "route not found" });
+  return res.status(404).json({ message: "route not found" });
 });
 
 app.listen(process.env.PORT, () => {
